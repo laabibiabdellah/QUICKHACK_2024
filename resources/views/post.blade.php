@@ -8,12 +8,22 @@
                             <h6 class="section-title bg-white text-center text-primary px-3">Posts</h6>
                             <h1 class="mb-5">Our Posts</h1>
                         </div>
-                        <div class="row g-4 justify-content-center">
+                        <div class="post-btns text-center my-4">
+                            @if (count($cities) <= 0)
+                                <h2 class='text-center'>NULL</h2>
+                            @else
+                               <button class="btn-cat" data-cityId="all" class="btn btn-primary me-2">All</button>
+                               @foreach ($cities as $city)
+                                   <button class="btn-cat" data-cityId="p-{{$city->id}}" class="btn btn-primary me-2">{{$city->name}}</button>
+                               @endforeach
+                            @endif
+                        </div>
+                        <div class="row g-4 justify-content-center post-content">
                             @if (count($posts) <= 0)
                                 <h2 class='text-center'>NULL</h2>
                             @else
                                 @foreach ( $posts as $post )
-                                <div class="col-lg-4 col-md-6 wow fadeInUp mt-3" data-wow-delay="0.1s">
+                                <div class="all {{'p-'.$post->city_id}} col-lg-4 col-md-6 wow fadeInUp mt-3" data-wow-delay="0.1s">
                                     <div class="package-item">
                                         <div class="overflow-hidden">
                                             <img class="img-fluid" src="{{asset('storage/'.$post->image)}}" alt="">
@@ -46,3 +56,5 @@
         </div>
         <!-- Contact End -->
 </x-scope>
+
+<script src="{{asset('js/actions.js')}}"></script>

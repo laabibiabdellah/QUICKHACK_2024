@@ -43,7 +43,7 @@
                                             <option disabled>Null</option>
                                             @else
                                                 @foreach ( $cities as $city )
-                                                <option value="{{$city->id}}">{{$city->name}}</option>
+                                                <option class="city-option" value="{{$city->id}}">{{$city->name}}</option>
                                                 @endforeach
                                             @endif
                                           </select>
@@ -61,7 +61,7 @@
                                             <option disabled>Null</option>
                                             @else
                                                 @foreach ( $prefectures as $prefecture )
-                                                <option value="{{$prefecture->id}}">{{$prefecture->name}}</option>
+                                                <option class="prefecture-option" value="{{$prefecture->id}}">{{$prefecture->name}}</option>
                                                 @endforeach
                                             @endif
                                           </select>

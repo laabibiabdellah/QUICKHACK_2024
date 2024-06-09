@@ -85,10 +85,3 @@
         },
     });
 })(jQuery);
-
-let links = document.querySelectorAll(".nav-link");
-links.forEach((element) => {
-    element.pathname == window.location.pathname
-        ? element.classList.add("active")
-        : element.classList.remove("active");
-});
