@@ -27,7 +27,9 @@
                         <img src="{{asset('storage/'.$post->image)}}" width="50%"> 
                   </h5>
                   <p class="card-text">{{$post->description}}</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                 <div class="w-100 my-5 not-clickable d-flex align-items-center justify-content-center">
+                    <div id="map"></div>
+                 </div>
                 </div>
                 <div class="card-footer text-muted">
                   <h4>{{$post->created_at->diffForHumans()}}</h4>

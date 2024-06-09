@@ -97,6 +97,11 @@
                                         <small class="text-danger">{{$message}}</small>
                                       @enderror
                                     </div>
+                                    <input class="lat" type="hidden" name="lat" >
+                                    <input class="lng" type="hidden" name="lng" >
+                                    <div class="w-100 my-5 d-flex align-items-center justify-content-center">
+                                      <div id="map"></div>
+                                   </div>
                                 </div>
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-3" type="submit">Create Post</button>

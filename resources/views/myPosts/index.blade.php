@@ -37,7 +37,7 @@
                                                <form method="POST" action="{{route('my-posts.destroy', $post)}}">
                                                    @csrf
                                                    @method('delete')
-                                                   <button type="submit" class="btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Delete post</button>
+                                                   <button type="submit" class="btn btn-sm btn-primary px-3 delete-btn" style="border-radius: 0 30px 30px 0;">Delete post</button>
                                                </form>
                                                @endauth 
                                             </div>

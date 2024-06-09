@@ -17,6 +17,8 @@ return new class extends Migration
             $table->longText('description');
             $table->string('image')->nullable()->default('-');
             $table->string('address');
+            $table->string('lat');
+            $table->string('lng');
             $table->string('location')->nullable()->default('-');
             $table->boolean('status')->default(0);
 

@@ -49,10 +49,20 @@
         <!-- Template Stylesheet -->
         <link href="{{asset('css/style.css')}}" rel="stylesheet" />
 
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+        <link href="
+        https://cdn.jsdelivr.net/npm/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.min.css
+        " rel="stylesheet">
+        
+        <style>
+            #map { height: 500px; width: 50%; }
+        </style>
 
     </head>
 
-    <body>
+    <body onload="getLocation()">
                 <!-- Spinner Start -->
                 <div
                 id="spinner"
@@ -132,7 +142,7 @@
                     class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-lg-0 bg-dark"
                 >
                     <a href="" class="navbar-brand p-0">
-                        <img src="{{asset('img/logo.png')}}" width="100%" height="100px" alt="logo">
+                        <img src="{{asset('img/logo.png')}}" width="70%" height="100px" alt="logo">
                     </a>
                     <button
                         class="navbar-toggler"
@@ -319,8 +329,22 @@
         <script src="{{asset('lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
         <script src="{{asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+        <script src="
+        https://cdn.jsdelivr.net/npm/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.min.js
+        "></script>
+
+          {{-- Sweet alert --}}
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+          <script src="{{asset('js/delete-confirmation.js')}}"></script>
+
         <!-- Template Javascript -->
         <script src="{{asset('js/main.js')}}"></script>
         <script src="{{asset('js/actions.js')}}"></script>
+        <script src="{{asset('js/map.js')}}"></script>
+        <script src="{{asset('js/postMap.js')}}"></script>
     </body>
 </html>

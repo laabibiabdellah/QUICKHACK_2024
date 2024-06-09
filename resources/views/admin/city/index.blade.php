@@ -51,13 +51,13 @@
                                 <div class="dropdown">
                                   <i class="ti-angle-down text-black" style="cursor:pointer !important;" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                                   <ul class="dropdown-menu">
-                                     <li><a class="dropdown-item" href="{{route('dashboard-posts.update',$city->id)}}">Edit</a></li>
+                                     <li><a class="dropdown-item" href="{{route('dashboard-cities.update',$city->id)}}">Edit</a></li>
                                     <li> 
   
-                                      <form action="{{route('dashboard-posts.destroy',$city->id)}}" method="POST">
+                                      <form action="{{route('dashboard-cities.destroy',$city->id)}}" method="POST">
                                         @csrf
                                         @method('delete')
-                                        <button class="dropdown-item delete-btn">Delete</button>
+                                        <button class="dropdown-item delete-btn delete-btn">Delete</button>
                                       </form>
                                     </li>
                                   </ul>

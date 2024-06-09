@@ -52,6 +52,7 @@
   <script src="{{'admin/js/template.js'}}"></script>
   <script src="{{'admin/js/todolist.js'}}"></script>
   <!-- endinject -->
+  <script src="{{asset('js/delete-confirmation.js')}}"></script>
 </body>
 
 </html>

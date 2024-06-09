@@ -41,6 +41,8 @@ class PostController extends Controller
             'description' => 'required',
             'image' => ['required', 'image', 'mimes:png,jpg,svg'],
             'address' => 'required',
+            'lat' => 'required',
+            'lng' => 'required',
             'prefecture_id' => 'required',
             'city_id' => 'required',
             'company_id' => 'required',

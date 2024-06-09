@@ -66,6 +66,8 @@ class MyPostsController extends Controller
             'description' => 'required',
             'address' => 'required',
             'image' => 'image',
+            'lat' => 'required',
+            'lng' => 'required',
             'city_id' => 'required',
             'company_id' => 'required',
             'prefecture_id' => 'required',

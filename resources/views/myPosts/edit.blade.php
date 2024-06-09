@@ -45,12 +45,12 @@
                                 <div class="form-group">
                                     <label for="exampleSelectGender">City</label>
                                       <select class="form-control bg-white" name="city_id" id="exampleSelectGender">
-                                        <option selected disabled>---</option>
+                                        <option selected >---</option>
                                         @if (count($cities)<=0)
                                         <option disabled>Null</option>
                                         @else
                                             @foreach ( $cities as $city )
-                                            <option value="{{$city->id}}">{{$city->name}}</option>
+                                            <option value="{{$city->id}}" {{$post->city_id == $city->id ? 'selected' : ''}}>{{$city->name}}</option>
                                             @endforeach
                                         @endif
                                       </select>
@@ -68,7 +68,7 @@
                                         <option disabled>Null</option>
                                         @else
                                             @foreach ( $prefectures as $prefecture )
-                                            <option value="{{$prefecture->id}}">{{$prefecture->name}}</option>
+                                            <option value="{{$prefecture->id}}" {{$post->prefecture_id == $prefecture->id ? 'selected' : ''}}>{{$prefecture->name}}</option>
                                             @endforeach
                                         @endif
                                       </select>
@@ -81,12 +81,12 @@
                                 <div class="form-group">
                                     <label for="exampleSelectGender">Companies</label>
                                       <select class="form-control bg-white" name="company_id" id="exampleSelectGender">
-                                        <option selected disabled>---</option>
+                                        <option  disabled>---</option>
                                         @if (count($companies)<=0)
                                         <option disabled>Null</option>
                                         @else
                                             @foreach ( $companies as $company )
-                                            <option value="{{$company->id}}">{{$company->name}}</option>
+                                            <option value="{{$company->id}}" {{$post->company_id == $company->id ? 'selected' : ''}}>{{$company->name}}</option>
                                             @endforeach
                                         @endif
                                       </select>
@@ -104,9 +104,14 @@
                                     <small class="text-danger">{{$message}}</small>
                                   @enderror
                                 </div>
+                                <input class="lat" type="hidden" name="lat" >
+                                <input class="lng" type="hidden" name="lng" >
+                                <div class="w-100 my-5 d-flex align-items-center justify-content-center">
+                                  <div id="map"></div>
+                               </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Create Post</button>
+                                <button class="btn btn-primary w-100 py-3" type="submit">Edit Post</button>
                             </div>
                         </div>
                     </form>
