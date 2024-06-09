@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\City;
 use App\Models\Post;
 use App\Models\Prefecture;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Symfony\Contracts\Service\Attribute\Required;
 
@@ -41,17 +40,19 @@ class AdminPostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(string $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('admin.post.show', compact('post'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(string $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('admin.post.edit', compact('post'));
     }
 
     /**
@@ -59,15 +60,14 @@ class AdminPostController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $data = $request->validate([
+            'status' => 'required',
+        ]);
 
-        $post = Post::findOrFail($id);
-
-        $post->status = $post->status == 0 ? 1 : 0;
+        Post::where('id', $id)->update(['status' => $data['status']]);
 
 
-        $post->save();
-
-        return redirect()->route('dashboard-posts')->with('success', 'Post updated successfully!');
+        return to_route('dashboard-posts.index')->with('success', 'Status changed successfully!');
     }
 
 

@@ -1,5 +1,4 @@
-@
-<x-dashboard-scope title='All hotels'>
+<x-dashboard-scope title='All Posts'>
     <style>
   
   .dropdown-menu {
@@ -78,21 +77,26 @@
                               <td>
                                 <p class="@if ($post->status == 0)
                                   text-danger
-                                  @else
+                                  @elseif($post->status == 1)
                                   text-success
+                                  @else
+                                  text-warning
                                 @endif">
-                                  {{$post->status == 0 ? 
-                                    'Pending'
-                                    :
-                                    'Done'
-                                    }} 
+                                @if ($post->status == 0)
+                                  In process
+                                @elseif($post->status == 1)
+                                  Done
+                                @else
+                                  Send
+                                @endif 
                                 </p>
                               </td>
                               <td>
                                 <div class="dropdown">
                                   <i class="ti-angle-down text-black" style="cursor:pointer !important;" role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                                   <ul class="dropdown-menu">
-                                     <li><a class="dropdown-item" href="{{route('dashboard-posts.update',$post->id)}}">Change to {{$post->status == 0 ? 'Done':'Pending'}}</a></li>
+                                     <li><a class="dropdown-item" href="{{route('dashboard-posts.edit',$post->id)}}">Change to {{$post->status == 0 ? 'Done':'Pending'}}</a></li>
+                                     <li><a class="dropdown-item" href="{{route('dashboard-posts.show',$post->id)}}">Show Post</a></li>
                                     <li> 
   
                                       <form action="{{route('dashboard-posts.destroy',$post->id)}}" method="POST">
