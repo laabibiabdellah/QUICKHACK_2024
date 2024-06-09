@@ -174,7 +174,7 @@
                                 >Profile</a
                             >
                             <div class="dropdown-menu m-0">
-                                <a href="{{route('home')}}" class="dropdown-item"
+                                <a href="{{route('settings.index')}}" class="dropdown-item"
                                     >Settings</a
                                 >
                                 <form action="{{route('logout')}}" method="POST">
@@ -246,56 +246,9 @@
                         ></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Gallery</h4>
-                    <div class="row g-2 pt-2">
-                        <div class="col-4">
-                            <img
-                                class="img-fluid bg-light p-1"
-                                src="img/package-1.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div class="col-4">
-                            <img
-                                class="img-fluid bg-light p-1"
-                                src="img/package-2.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div class="col-4">
-                            <img
-                                class="img-fluid bg-light p-1"
-                                src="img/package-3.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div class="col-4">
-                            <img
-                                class="img-fluid bg-light p-1"
-                                src="img/package-2.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div class="col-4">
-                            <img
-                                class="img-fluid bg-light p-1"
-                                src="img/package-3.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div class="col-4">
-                            <img
-                                class="img-fluid bg-light p-1"
-                                src="img/package-1.jpg"
-                                alt=""
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Newsletter</h4>
-                    <p>
+                <div class="col-lg-6 col-md-6">
+                    <h4 class="text-white mb-3 text-center">Newsletter</h4>
+                    <p class="text-center">
                         Dolor amet sit justo amet elitr clita ipsum elitr
                         est.
                     </p>
