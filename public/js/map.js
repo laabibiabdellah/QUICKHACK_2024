@@ -35,10 +35,7 @@ function showPosition(position) {
             }
         });
 
-        L.marker([e.layerPoint.x, e.layerPoint.y])
-            .addTo(map)
-            .bindPopup("Point for Map")
-            .openPopup();
+        L.marker([lat, lng]).addTo(map).bindPopup("Point for Map").openPopup();
 
         let latInpt = document.querySelector(".lat");
         let lngInpt = document.querySelector(".lng");

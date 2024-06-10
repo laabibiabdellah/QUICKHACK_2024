@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminUsersController;
 use App\Http\Controllers\AdminCityController;
 use App\Http\Controllers\AdminCompanyController;
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminPrefectureController;
 use App\Http\Controllers\MyPostsController;
 use App\Http\Controllers\UserController;
@@ -20,6 +21,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('register', RegisterController::class)->middleware('guest');
+Route::resource('dashboard', AdminDashboardController::class)->middleware('auth');
 Route::resource('dashboard-users', AdminUsersController::class)->middleware('auth');
 Route::resource('dashboard-posts', AdminPostController::class)->middleware('auth');
 Route::resource('dashboard-cities', AdminCityController::class)->middleware('auth');
@@ -46,10 +48,6 @@ Route::get('/contact', function () {
 
 
 
-
-Route::get('/dashboard', function () {
-    return view('admin.index');
-})->name('dashboard')->middleware('auth');
 Route::get('/dashboard/settings', function () {
     return view('admin.settings');
 })->name('settings')->middleware('auth');

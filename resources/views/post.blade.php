@@ -1,4 +1,22 @@
 <x-scope>
+    <style>
+        .btn-cat{
+            background: none;
+            border-radius: 30px;
+            padding: 5px 20px;  
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            cursor: pointer;
+        }
+        .btn-cat:hover{
+            background-color: var(--primary);  
+            color: var(--light);
+        }
+        .btn-cat.active{
+            background-color: var(--primary);  
+            color: var(--light);
+        }
+    </style>
         <!-- Contact Start -->
         <div class="container-xxl py-5">
             <div class="container">

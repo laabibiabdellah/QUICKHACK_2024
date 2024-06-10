@@ -22,7 +22,7 @@ class LoginController extends Controller
         if ($success) {
             $request->session()->regenerate();
             if (Auth::user()->user_type == 'admin') {
-                return to_route('dashboard')->with('success', 'Login successfully');
+                return to_route('dashboard.index')->with('success', 'Login successfully');
             } else {
                 return to_route('home')->with('success', 'Login successfully');
             }
@@ -33,7 +33,7 @@ class LoginController extends Controller
         if (Auth::check()) {
             $request->session()->regenerate();
             if (Auth::user()->user_type == 'admin') {;
-                return to_route('dashboard')->with('success', 'Login successfully');
+                return to_route('dashboard.index')->with('success', 'Login successfully');
             } else {
                 return to_route('home')->with('success', 'Login successfully');
             }

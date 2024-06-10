@@ -18,7 +18,7 @@ class GuestMiddleware
     {
         if (Auth::check()) {
             if (Auth::user()->user_type == 'user') {
-                return redirect()->route('dashboard');
+                return redirect()->route('dashboard.index');
             } else {
                 return redirect()->route('home');
             }
